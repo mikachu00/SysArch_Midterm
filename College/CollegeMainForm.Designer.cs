@@ -1,6 +1,6 @@
 ﻿namespace SysArch_Midterm.CollegeMain
 {
-    partial class CollegeMain
+    partial class CollegeMainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -79,6 +79,7 @@
             this.btnedit.TabIndex = 19;
             this.btnedit.Text = "EDIT";
             this.btnedit.UseVisualStyleBackColor = true;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // btnadd
             // 

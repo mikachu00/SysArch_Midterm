@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace SysArch_Midterm.CollegeMain
 {
-    public partial class CollegeMain : Form
+    public partial class CollegeMainForm : Form
     {
         private string sql;
-        public CollegeMain()
+        public CollegeMainForm()
         {
             InitializeComponent();
         }
@@ -36,14 +36,14 @@ namespace SysArch_Midterm.CollegeMain
             }
             try
             {
-                sql = "INSERT INTO college(CollegeID, CollegeName, CollegeCode, IsActive)" +
+                sql = "INSERT INTO College(CollegeID, CollegeName, CollegeCode, IsActive)" +
                           "VALUES(" + txtcollegeID.Text + "," +
                           " '" + txtcollegename.Text + "'," +
                           " '" + txtcollegecode.Text + "'," +
                           " '" + (chkactive.Checked ? "1" : "0") + "')";
 
                 DBHelper.DBHelper.ModifyRecord(sql);
-                MessageBox.Show("Data has been added...", "Save new college", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Data has been added...", "Save new College", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 CollegeMain_Load(sender, e); // Refresh the data grid
                 clearfields();        // Clear input fields
@@ -58,6 +58,31 @@ namespace SysArch_Midterm.CollegeMain
             txtcollegename.Clear();
             txtcollegecode.Clear();
             chkactive.Checked = false;
+        }
+
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtcollegename.Text) || string.IsNullOrWhiteSpace(txtcollegecode.Text))
+            {
+                MessageBox.Show("All fields must be filled out.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                sql = "UPDATE College SET CollegeName ='" + txtcollegename.Text +
+                      "', CollegeCode = '" + txtcollegecode.Text +
+                      "', IsActive = '" + (chkactive.Checked ? "1" : "0") +
+                      "' WHERE CollegeID = " + txtcollegeID.Text;
+
+                DBHelper.DBHelper.ModifyRecord(sql);
+                MessageBox.Show("Data has been updated...", "Update College", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CollegeMain_Load(sender, e); // Refresh the data grid
+                clearfields();        // Clear input fields
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
