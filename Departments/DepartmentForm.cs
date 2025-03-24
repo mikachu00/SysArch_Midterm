@@ -87,5 +87,19 @@ namespace SysArch_Midterm.Departments
                 MessageBox.Show(ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                sql = "DELETE FROM Department WHERE DepartmentID =" + txtdeptid.Text;
+                DBHelper.DBHelper.ModifyRecord(sql);
+                MessageBox.Show("Department deleted successfully.", "Delete Department", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DepartmentForm_Load(sender, e);
+                ClearFields();
+            }
+        }
     }
 }
