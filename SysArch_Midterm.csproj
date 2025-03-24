@@ -46,12 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="College\CollegeMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="College\CollegeMain.Designer.cs">
+      <DependentUpon>CollegeMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection\Connection.cs" />
     <Compile Include="DBHelper\DBHelper.cs" />
     <Compile Include="GlobalDeclaration\ClassNumber.cs" />
     <Compile Include="GlobalDeclaration\Globaldeclaration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="College\CollegeMain.resx">
+      <DependentUpon>CollegeMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -74,5 +83,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
