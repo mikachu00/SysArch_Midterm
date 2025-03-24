@@ -62,5 +62,30 @@ namespace SysArch_Midterm.Departments
             chkactive.Checked = false;
         }
 
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtdeptname.Text) || string.IsNullOrWhiteSpace(txtdeptcode.Text))
+            {
+                MessageBox.Show("All fields must be filled out.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                sql = "UPDATE Department SET CollegeID = " + txtcollegeID.Text +
+                      ", DepartmentName = '" + txtdeptname.Text +
+                      "', DepartmentCode = '" + txtdeptcode.Text +
+                      "', IsActive = '" + (chkactive.Checked ? "1" : "0") +
+                      "' WHERE DepartmentID = " + txtdeptid.Text;
+
+                DBHelper.DBHelper.ModifyRecord(sql);
+                MessageBox.Show("Department updated successfully.", "Update Department", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DepartmentForm_Load(sender, e); // Refresh DataGridView
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

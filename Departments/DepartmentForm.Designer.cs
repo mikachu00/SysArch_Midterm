@@ -89,6 +89,7 @@
             this.btnedit.TabIndex = 27;
             this.btnedit.Text = "EDIT";
             this.btnedit.UseVisualStyleBackColor = true;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // btnadd
             // 
