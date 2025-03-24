@@ -84,5 +84,46 @@ namespace SysArch_Midterm.CollegeMain
                 MessageBox.Show(ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show("Are you sure you want to deactivate this record?", "Deactivate College", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                try
+                {
+                    sql = "UPDATE College SET IsActive = 0 WHERE CollegeID =" + txtcollegeID.Text;
+                    DBHelper.DBHelper.ModifyRecord(sql);
+                    MessageBox.Show("Record has been deactivated.", "Soft Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dgvcollege.DataSource = null;
+                    CollegeMain_Load(sender, e); // Refresh the data grid
+                    clearfields();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void dgvcollege_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvcollege_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvcollege.Rows[e.RowIndex];
+                txtcollegeID.Text = row.Cells["CollegeID"].Value.ToString();
+                txtcollegename.Text = row.Cells["CollegeName"].Value.ToString();
+                txtcollegecode.Text = row.Cells["CollegeCode"].Value.ToString();
+                chkactive.Checked = row.Cells["IsActive"].Value.ToString() == "True";
+
+
+            }
+        }
     }
 }

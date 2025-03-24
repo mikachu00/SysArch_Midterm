@@ -1,6 +1,6 @@
 ﻿namespace SysArch_Midterm.CollegeMain
 {
-    partial class CollegeMainForm
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -51,8 +51,6 @@
             this.dgvcollege.RowTemplate.Height = 24;
             this.dgvcollege.Size = new System.Drawing.Size(502, 268);
             this.dgvcollege.TabIndex = 0;
-            this.dgvcollege.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcollege_CellClick);
-            this.dgvcollege.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcollege_CellContentClick);
             // 
             // chkactive
             // 
@@ -72,7 +70,6 @@
             this.btndelete.TabIndex = 20;
             this.btndelete.Text = "DELETE";
             this.btndelete.UseVisualStyleBackColor = true;
-            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnedit
             // 
@@ -82,7 +79,6 @@
             this.btnedit.TabIndex = 19;
             this.btnedit.Text = "EDIT";
             this.btnedit.UseVisualStyleBackColor = true;
-            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // btnadd
             // 
@@ -142,7 +138,7 @@
             this.txtcollegeID.Size = new System.Drawing.Size(149, 22);
             this.txtcollegeID.TabIndex = 12;
             // 
-            // CollegeMainForm
+            // CollegeMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,7 +154,7 @@
             this.Controls.Add(this.txtcollegename);
             this.Controls.Add(this.txtcollegeID);
             this.Controls.Add(this.dgvcollege);
-            this.Name = "CollegeMainForm";
+            this.Name = "CollegeMain";
             this.Text = "College";
             this.Load += new System.EventHandler(this.CollegeMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcollege)).EndInit();
