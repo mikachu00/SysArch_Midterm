@@ -98,6 +98,7 @@
             this.btnadd.TabIndex = 26;
             this.btnadd.Text = "ADD";
             this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // chkactive
             // 
@@ -175,6 +176,7 @@
             this.Controls.Add(this.dgvdept);
             this.Name = "DepartmentForm";
             this.Text = "DepartmentForm";
+            this.Load += new System.EventHandler(this.DepartmentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdept)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
