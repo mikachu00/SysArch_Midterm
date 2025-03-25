@@ -1,4 +1,5 @@
 ﻿using SysArch_Midterm.CollegeMain;
+using SysArch_Midterm.Departments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace SysArch_Midterm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CollegeMainForm());
+            Application.Run(new DepartmentForm());
         }
     }
 }
