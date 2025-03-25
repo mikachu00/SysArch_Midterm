@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SysArch_Midterm.Departments;
 
 namespace SysArch_Midterm.CollegeMain
 {
@@ -109,7 +110,15 @@ namespace SysArch_Midterm.CollegeMain
 
         private void dgvcollege_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvcollege.Rows[e.RowIndex];
 
+                txtcollegeID.Text = row.Cells["CollegeID"].Value.ToString();
+                txtcollegename.Text = row.Cells["CollegeName"].Value.ToString();
+                txtcollegecode.Text = row.Cells["CollegeCode"].Value.ToString();
+                chkactive.Checked = row.Cells["IsActive"].Value.ToString() == "True";
+            }
         }
 
         private void dgvcollege_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -124,6 +133,20 @@ namespace SysArch_Midterm.CollegeMain
 
 
             }
+        }
+
+        private void backToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Close();
+        }
+
+        private void departmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DepartmentForm departmentForm = new DepartmentForm();
+            departmentForm.Show();
+            this.Close();
         }
     }
 }

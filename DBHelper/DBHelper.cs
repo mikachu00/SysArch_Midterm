@@ -75,5 +75,24 @@ namespace SysArch_Midterm.DBHelper
                 return 0;
             }
         }
+
+        public static DataTable GetDataTable(string query)
+        {
+            try
+            {
+                Connection.Connection.DB();
+                DataTable dt = new DataTable();
+                OleDbDataAdapter adapter = new OleDbDataAdapter(new OleDbCommand(query, Connection.Connection.conn));
+                adapter.Fill(dt);
+                Connection.Connection.conn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                Connection.Connection.conn.Close();
+                MessageBox.Show("Error retrieving data: " + ex.Message);
+                return null;
+            }
+        }
     }
 }
