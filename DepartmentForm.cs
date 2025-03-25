@@ -146,9 +146,9 @@ namespace SysArch_Midterm.Departments
 
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CollegeMainForm cm = new CollegeMainForm();
-            cm.Show();
-            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Close();
         }
     }
 }
