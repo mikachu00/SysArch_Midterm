@@ -109,7 +109,15 @@ namespace SysArch_Midterm.CollegeMain
 
         private void dgvcollege_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvcollege.Rows[e.RowIndex];
 
+                txtcollegeID.Text = row.Cells["CollegeID"].Value.ToString();
+                txtcollegename.Text = row.Cells["CollegeName"].Value.ToString();
+                txtcollegecode.Text = row.Cells["CollegeCode"].Value.ToString();
+                chkactive.Checked = row.Cells["IsActive"].Value.ToString() == "True";
+            }
         }
 
         private void dgvcollege_CellClick(object sender, DataGridViewCellEventArgs e)
