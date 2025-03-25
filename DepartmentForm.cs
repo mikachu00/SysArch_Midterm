@@ -38,7 +38,7 @@ namespace SysArch_Midterm.Departments
 
                 cmbcollegeID.DataSource = dt;
                 cmbcollegeID.DisplayMember = "CollegeID";
-                cmbcollegeID.ValueMember = "CollegeID";
+                cmbcollegeID.ValueMember = "CollegeID";//collegeid
                 cmbcollegeID.SelectedIndex = -1;
             }
             catch (Exception ex)
@@ -122,6 +122,21 @@ namespace SysArch_Midterm.Departments
             txtdeptname.Clear();
             txtdeptcode.Clear();
             chkactive.Checked = false;
+        }
+
+        private void dgvdept_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvdept.Rows[e.RowIndex];
+
+                txtdeptid.Text = row.Cells["DepartmentID"].Value.ToString();
+                txtdeptname.Text = row.Cells["DepartmentName"].Value.ToString();
+                txtdeptcode.Text = row.Cells["DepartmentCode"].Value.ToString();
+                cmbcollegeID.SelectedValue = row.Cells["CollegeID"].Value;
+                chkactive.Checked = row.Cells["IsActive"].Value.ToString() == "True";
+
+            }
         }
     }
 }

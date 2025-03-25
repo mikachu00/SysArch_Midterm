@@ -150,6 +150,7 @@
             this.dgvdept.RowTemplate.Height = 24;
             this.dgvdept.Size = new System.Drawing.Size(657, 207);
             this.dgvdept.TabIndex = 20;
+            this.dgvdept.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdept_CellClick);
             // 
             // cmbcollegeID
             // 
