@@ -13,6 +13,7 @@ namespace SysArch_Midterm.Departments
     public partial class DepartmentForm : Form
     {
         private string sql;
+        private string esql;
         public DepartmentForm()
         {
             InitializeComponent();
@@ -27,6 +28,9 @@ namespace SysArch_Midterm.Departments
             txtdeptid.Text = GlobalDeclaration.Globaldeclaration.GlobalDeclarations.DepartmentID.ToString();
 
             FillCollegeComboBox();
+
+            esql = "SELECT CollegeId, CollegeName FROM College";
+            DBHelper.DBHelper.fill(sql, dgvCollege);
         }
 
         private void FillCollegeComboBox()
