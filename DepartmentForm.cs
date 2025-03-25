@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SysArch_Midterm.CollegeMain;
 
 namespace SysArch_Midterm.Departments
 {
@@ -141,6 +142,13 @@ namespace SysArch_Midterm.Departments
                 chkactive.Checked = row.Cells["IsActive"].Value.ToString() == "True";
 
             }
+        }
+
+        private void backToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CollegeMainForm cm = new CollegeMainForm();
+            cm.Show();
+            this.Hide();
         }
     }
 }
