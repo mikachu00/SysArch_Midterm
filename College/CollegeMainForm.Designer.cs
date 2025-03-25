@@ -169,7 +169,7 @@
             this.backToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1027, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(991, 35);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -212,7 +212,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(1027, 688);
+            this.ClientSize = new System.Drawing.Size(991, 688);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvcollege);

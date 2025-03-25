@@ -53,6 +53,12 @@
       <DependentUpon>CollegeMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection\Connection.cs" />
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBHelper\DBHelper.cs" />
     <Compile Include="DepartmentForm.cs">
       <SubType>Form</SubType>
@@ -66,6 +72,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="College\CollegeMainForm.resx">
       <DependentUpon>CollegeMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DepartmentForm.resx">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
