@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SysArch_Midterm.Departments;
 
 namespace SysArch_Midterm.CollegeMain
 {
@@ -138,6 +139,13 @@ namespace SysArch_Midterm.CollegeMain
         {
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
+            this.Close();
+        }
+
+        private void departmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DepartmentForm departmentForm = new DepartmentForm();
+            departmentForm.Show();
             this.Close();
         }
     }
