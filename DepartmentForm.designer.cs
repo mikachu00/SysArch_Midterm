@@ -49,6 +49,8 @@
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.collegeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdept)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCollege)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -220,7 +222,8 @@
             this.menuStrip1.BackColor = System.Drawing.Color.HotPink;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backToolStripMenuItem});
+            this.backToolStripMenuItem,
+            this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1121, 36);
@@ -265,6 +268,22 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.collegeToolStripMenuItem});
+            this.viewToolStripMenuItem.Font = new System.Drawing.Font("Papyrus", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(65, 32);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // collegeToolStripMenuItem
+            // 
+            this.collegeToolStripMenuItem.Name = "collegeToolStripMenuItem";
+            this.collegeToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.collegeToolStripMenuItem.Text = "College";
+            this.collegeToolStripMenuItem.Click += new System.EventHandler(this.collegeToolStripMenuItem_Click);
             // 
             // DepartmentForm
             // 
@@ -318,5 +337,7 @@
         private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem collegeToolStripMenuItem;
     }
 }

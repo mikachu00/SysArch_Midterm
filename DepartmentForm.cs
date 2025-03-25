@@ -150,5 +150,12 @@ namespace SysArch_Midterm.Departments
             dashboard.Show();
             this.Close();
         }
+
+        private void collegeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CollegeMainForm collegeMainForm = new CollegeMainForm();
+            collegeMainForm.Show();
+            this.Close();
+        }
     }
 }

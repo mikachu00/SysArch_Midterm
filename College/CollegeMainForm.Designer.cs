@@ -239,6 +239,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CollegeMainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "College";
             this.Load += new System.EventHandler(this.CollegeMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcollege)).EndInit();
